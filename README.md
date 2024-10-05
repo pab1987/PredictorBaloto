@@ -25,10 +25,4 @@ Este proyecto es una aplicación web basada en Flask que permite agregar, cargar
    cd prediccion_baloto
 
 
-### Instrucciones Agregadas
-
-- La sección sobre Docker incluye pasos para construir la imagen y levantar el contenedor.
-- Se menciona la necesidad de un archivo `.env` para la configuración de la base de datos.
-
-Asegúrate de ajustar cualquier detalle según las necesidades específicas de tu proyecto y tu entorno. Si necesitas más información o cambios adicionales, házmelo saber.
 
