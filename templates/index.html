@@ -1,0 +1,51 @@
+
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Predicción de Combinaciones Baloto</title>
+     <link rel="stylesheet" href="../static/css/styles.css">
+ </head>
+ <body>
+     <header>
+         <div class="logo">
+             <h1>Predicciones de Combinaciones Baloto</h1>
+         </div>
+     </header>
+     <div class="container">
+         <h2>Formulario de Combinaciones</h2>
+         <form id="combinationForm" class="form">
+             <label for="numbers">Balotas del 01 al 43:</label>
+             <div class="input-group">
+                 <input type="number" id="num1" min="1" max="43" required>
+                 <input type="number" id="num2" min="1" max="43" required>
+                 <input type="number" id="num3" min="1" max="43" required>
+                 <input type="number" id="num4" min="1" max="43" required>
+                 <input type="number" id="num5" min="1" max="43" required>
+             </div>
+ 
+             <label for="special">Super balota del 01 al 16:</label>
+             <input type="number" id="special" min="1" max="16" required>
+ 
+             <button type="submit">Agregar Combinación</button>
+         </form>
+         <div id="message"></div>
+ 
+         <form id="csvForm" class="form" enctype="multipart/form-data">
+             <label for="csvFile">Subir archivo CSV:</label>
+             <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
+             <button type="submit">Cargar CSV</button>
+         </form>
+         
+         <p id="csvMessage"></p>
+     </div>
+     
+     <footer>
+         <p>&copy; 2024 Predicciones de Combinaciones. Todos los derechos reservados por Pablo Lara.</p>
+     </footer>
+     
+     <script src="../static/js/script.js"></script>
+ </body>
+ </html>
+ 
