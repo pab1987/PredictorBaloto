@@ -15,6 +15,7 @@ Este proyecto es una aplicación web basada en Flask que permite agregar, cargar
 
 - Python 3.7 o superior
 - PostgreSQL
+- Docker y Docker Compose
 
 ## Instalación
 
