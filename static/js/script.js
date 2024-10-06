@@ -39,7 +39,10 @@ document.getElementById('combinationForm').addEventListener('submit', async func
 
             // Mostrar mensaje basado en la respuesta
             if (result.success) {
-                document.getElementById('message').textContent = "Combinación agregada con éxito.";
+                    document.getElementById('message').textContent = "Combinación agregada con éxito.";
+                setTimeout(() => {
+                    document.getElementById('message').textContent = "";
+                }, 3000);
                 document.getElementById('combinationForm').reset(); // Limpiar el formulario
             } else {
                 document.getElementById('message').textContent = "Error al agregar la combinación: " + result.error;
@@ -76,7 +79,11 @@ document.getElementById('csvForm').addEventListener('submit', async function(eve
     const result = await response.json();
 
     if (result.success) {
-        document.getElementById('csvMessage').textContent = "Combinaciones cargadas con éxito.";
+            document.getElementById(
+                'csvMessage'
+            ).textContent = "Combinaciones cargadas con éxito.";  
+        
+        
     } else {
         document.getElementById('csvMessage').textContent = "Error al cargar las combinaciones: " + result.error;
     }
