@@ -1,22 +1,7 @@
-# Este archivo contiene las dependencias necesarias para el proyecto de predicción de combinaciones.
-
-# Flask es el marco de trabajo web utilizado.
 Flask==2.2.3
-
-# Flask-SQLAlchemy es la extensión que integra SQLAlchemy con Flask.
 Flask-SQLAlchemy==2.5.1
-
-# Flask-CORS permite manejar el intercambio de recursos entre dominios.
 Flask-CORS==3.0.10
-
-# psycopg2 es el adaptador de PostgreSQL para Python.
 psycopg2==2.9.3
-
-# Para realizar pruebas.
 pytest==7.1.3
-
-# Para manejar archivos CSV y realizar análisis de datos.
 pandas==1.4.3
-
-# Para realizar cálculos numéricos.
 numpy==1.23.1
