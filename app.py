@@ -243,20 +243,7 @@ model = joblib.load('trained_model.pkl')
 
 @app.route('/predict', methods=['GET'])
 def predict():
-    """ combinations = [{'numbers': comb.numbers.split(','), 'special': comb.special} for comb in Combination.query.all()]
-    next_numbers, next_special = predict_next_combination(combinations)
-    
-    # Aquí puedes usar el modelo para predecir el número especial
-    prediction_input = [next_numbers]  # Asegúrate de que tenga la forma correcta
-    predicted_special = model.predict(prediction_input)[0]  # Predicción usando el modelo
 
-    # Convertir predicted_special a un tipo nativo
-    predicted_special = int(predicted_special)  # Asegúrate de que sea un int
-
-    prediction = {'numbers': next_numbers, 'special': predicted_special}
-    add_prediction_to_history(prediction)
-    print(f"Predicción realizada: {prediction}")
-    return jsonify(prediction) """
     combinations = [{'numbers': list(map(int, comb.numbers.split(','))), 'special': comb.special} for comb in Combination.query.all()]
     next_numbers, next_special = predict_next_combination(combinations)
     

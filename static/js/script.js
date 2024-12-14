@@ -19,7 +19,7 @@ document.getElementById('combinationForm').addEventListener('submit', async func
     if (validNumbers && validSpecial) {
         try {
             // Enviar los datos al backend
-            const response = await fetch('http://127.0.0.1:5000/add_combination', {  // Asegúrate de que Flask corre en el puerto 5000
+            const response = await fetch('https://predictorbaloto.onrender.com/add_combination', {  // Asegúrate de que Flask corre en el puerto 5000
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ document.getElementById('csvForm').addEventListener('submit', async function(eve
     formData.append('csvFile', csvFile);
 
     // Enviar el archivo al backend
-    const response = await fetch('http://127.0.0.1:5000/upload_csv', {
+    const response = await fetch('https://predictorbaloto.onrender.com/upload_csv', {
         method: 'POST',
         body: formData
     });
