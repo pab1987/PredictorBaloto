@@ -11,6 +11,7 @@ import csv
 import random
 import joblib
 from collections import defaultdict
+from datetime import datetime
 
 # Cargar las variables de entorno desde el archivo .env
 load_dotenv()
@@ -174,15 +175,6 @@ def get_conditional_probabilities():
     co_occurrences = calculate_conditional_probabilities(combinations)
     return jsonify(co_occurrences)
 
-# Función para predecir la próxima combinación
-""" def predict_next_combination(combinations):
-    for combination in combinations:
-        combination['numbers'] = list(map(int, combination['numbers']))  # Convertir a enteros
-
-    number_frequencies, special_frequencies = count_frequencies(combinations)
-    next_numbers = sorted(number_frequencies, key=number_frequencies.get, reverse=True)[:5]
-    next_special = max(special_frequencies, key=special_frequencies.get)
-    return next_numbers, next_special """
     
 # Función mejorada para predecir la próxima combinación
 def predict_next_combination(combinations):
@@ -256,13 +248,31 @@ def predict():
 
     prediction = {'numbers': next_numbers, 'special': predicted_special}
     add_prediction_to_history(prediction)
+    
+    # Obtener la hora actual
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     print(f"Predicción realizada: {prediction}")
     
     # Imprimir las características importantes del modelo
     print("******** Características importantes ********** ", model.feature_importances_)
     print("Número de estimadores:", model.n_estimators)
+    
+    response = {
+        "estado": "exitoso",  # Indicador de éxito
+        "mensaje": "La predicción se ha generado con éxito. Aquí están los números recomendados para la próxima jugada:",
+        "prediccion": {
+            "balotas": prediction["numbers"],
+            "super_balota": prediction["special"]
+        },
+        "informacion_del_modelo": {
+            "caracteristicas_importantes": model.feature_importances_.tolist(),  # Convertir a lista
+            "cantidad_de_estimadores": model.n_estimators
+        },
+        "fecha_hora": timestamp  # Fecha y hora actual
+    }
 
-    return jsonify(prediction)
+    return jsonify(response)
 
 
 
