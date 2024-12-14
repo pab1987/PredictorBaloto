@@ -1,5 +1,7 @@
 
 import pandas as pd
+from dotenv import load_dotenv
+import os
 from sklearn.ensemble import RandomForestClassifier
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
@@ -10,10 +12,13 @@ import random
 import joblib
 from collections import defaultdict
 
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
+
 app = Flask(__name__)
 
-# Configuración de la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pablo:P4bl03011@localhost/combinations_db'
+# Usar la URL de la base de datos externa proporcionada por Render
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///default.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Inicializar la base de datos
