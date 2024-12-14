@@ -260,16 +260,14 @@ def predict():
     
     response = {
         "estado": "exitoso",  # Indicador de éxito
+        "fecha_hora": timestamp,  # Fecha y hora actual
         "mensaje": "La predicción se ha generado con éxito. Aquí están los números recomendados para la próxima jugada:",
+        "informacion_adicional": "Estas son las características clave que el modelo utilizó para hacer la predicción. El modelo usó 100 estimadores para generar esta predicción.",
         "prediccion": {
             "balotas": prediction["numbers"],
             "super_balota": prediction["special"]
         },
-        "informacion_del_modelo": {
-            "caracteristicas_importantes": model.feature_importances_.tolist(),  # Convertir a lista
-            "cantidad_de_estimadores": model.n_estimators
-        },
-        "fecha_hora": timestamp  # Fecha y hora actual
+        
     }
 
     return jsonify(response)
