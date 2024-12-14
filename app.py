@@ -25,8 +25,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Permitir solo el origen específico
-CORS(app, resources={r"/add_combination": {"origins": "http://127.0.0.1:5500"},
-                     r"/upload_csv": {"origins": "http://127.0.0.1:5500"}})
+CORS(app, resources={r"/add_combination": {"origins": "*"},
+                     r"/upload_csv": {"origins": "*"}})
 
 # Modelo de la base de datos para almacenar combinaciones
 class Combination(db.Model):
