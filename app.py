@@ -3,7 +3,7 @@ import pandas as pd
 from dotenv import load_dotenv
 import os
 from sklearn.ensemble import RandomForestClassifier
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import random
@@ -17,6 +17,17 @@ from datetime import datetime
 load_dotenv()
 
 app = Flask(__name__)
+
+# Ruta para el índice (usuario)
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Ruta para el panel de administrador
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
 
 # Usar la URL de la base de datos externa proporcionada por Render
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///default.db')
