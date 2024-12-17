@@ -1,37 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f4f4f9;
+
+
+/**************** Estilos bar ********************/
+
+.nav-link:hover {
+    color: #5a492d;  /* Cambiar el color del texto al pasar el cursor */
+    background-color: rgba(189, 159, 159, 0.1);  /* Fondo ligeramente visible */
+    border-radius: 5px;  /* Bordes redondeados */
 }
 
-.title {
-    text-align: center;
-    color: #218838;
-    font-weight: bold;
+.nav-link.active {
+    color: #fff !important;  /* Cambiar el color del texto cuando el enlace está activo */
+    background-color: #e2e4e6;  /* Cambiar el color de fondo cuando el enlace está activo */
+    border-radius: 5px;  /* Bordes redondeados */
 }
 
-ol {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+.navbar-brand {
+    display: flex;
+    align-items: center;  /* Alinea el logo y texto verticalmente */
+    justify-content: center; /* Alinea el logo y texto horizontalmente */
+  }
+  
+  .logo {
+    padding-right: 5px;
+    max-width: 100%;  /* Evita que la imagen se desborde */
+    height: auto;     /* Mantiene la proporción de la imagen */
+  }
 
-ol li {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #555;
-    padding-left: 10px;
-}
 
-ol li::marker {
-    color: #4caf50;
-    font-weight: bold;
-}
+/************************************/
 
 p {
     margin-top: 15px;
@@ -99,7 +95,7 @@ button {
     color: white;
     background-color: #28a745;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px !important;
     cursor: pointer;
 }
 
@@ -107,7 +103,7 @@ button:hover {
     background-color: #218838;
 }
 
-button:active{
+button:active {
     background-color: #fff;
     color: #666;
     border: 0.5px solid #4caf50;
@@ -116,3 +112,35 @@ button:active{
 .hidden {
     display: none;
 }
+
+/* Otros estilos existentes */
+/* .title {
+    text-align: center;
+    color: #218838;
+    font-weight: bold;
+}
+
+ol {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ol li {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #555;
+    padding-left: 10px;
+}
+
+ol li::marker {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+
+
+ */
