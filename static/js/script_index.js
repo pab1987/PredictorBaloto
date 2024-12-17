@@ -1,22 +1,5 @@
 document.getElementById('fetchButton').addEventListener('click', function () {
 
-    // Obtener todos los elementos de la barra de navegación
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Función para eliminar la clase 'active' de todos los elementos
-    function removeActiveClass() {
-        navLinks.forEach(link => link.classList.remove('active'));
-    }
-
-    // Añadir evento de clic a cada enlace
-    navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            removeActiveClass();  // Eliminar 'active' de todos
-            this.classList.add('active');  // Agregar 'active' al enlace clickeado
-        });
-    });
-
-
 
     // Realizar la petición GET a la ruta '/predict'
     fetch('/predict')
@@ -46,4 +29,21 @@ document.getElementById('fetchButton').addEventListener('click', function () {
             console.error('Error al hacer la petición:', error);
             alert('Hubo un error al obtener los resultados.');
         });
+});
+
+
+// Obtener todos los elementos de la barra de navegación
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Función para eliminar la clase 'active' de todos los elementos
+function removeActiveClass() {
+    navLinks.forEach(link => link.classList.remove('active'));
+}
+
+// Añadir evento de clic a cada enlace
+navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        removeActiveClass();  // Eliminar 'active' de todos
+        this.classList.add('active');  // Agregar 'active' al enlace clickeado
+    });
 });
