@@ -9,7 +9,7 @@
 }
 
 .nav-link.active {
-    color: #fff !important;  /* Cambiar el color del texto cuando el enlace está activo */
+    color: #000 !important;  /* Cambiar el color del texto cuando el enlace está activo */
     background-color: #e2e4e6;  /* Cambiar el color de fondo cuando el enlace está activo */
     border-radius: 5px;  /* Bordes redondeados */
 }
@@ -52,17 +52,86 @@ p {
     align-items: center;
 }
 
+
 .box {
     width: 60px;
     height: 60px;
-    background-color: #007BFF;
+    background: radial-gradient(circle at top left, #fff 0%, #f9b525 40%, #f9b525 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    text-decoration: underline;
+    border-radius: 50%; /* Cambiado a 50% para asegurar una forma circular */
     font-size: 24px;
     font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 
+                inset 0 -4px 6px rgba(0, 0, 0, 0.2), 
+                0 0 15px rgba(255, 234, 0, 0.6); /* Efecto brillante */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo animado */
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0) 60%);
+    transform: rotate(45deg);
+    animation: shine 3s infinite linear;
+    pointer-events: none;
+}
+
+/* Animación de brillo */
+@keyframes shine {
+    0% {
+        transform: rotate(45deg) translateX(-200%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(200%);
+    }
+}
+
+/* Efecto de brillo animado */
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0) 60%);
+    transform: rotate(45deg);
+    animation: shine 3s infinite linear;
+    pointer-events: none;
+}
+
+/* Balota especial */
+.super_balota .box {
+    background: radial-gradient(circle at top left, #fff 0%, #f9566e 50%, #c21838 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 
+                inset 0 -4px 6px rgba(0, 0, 0, 0.2), 
+                0 0 15px rgba(249, 86, 110, 0.6); /* Efecto brillante personalizado */
+}
+
+/* Brillo animado para la super balota */
+.super_balota .box::before {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 20%, rgba(255, 255, 255, 0) 60%);
+    animation: super-shine 3s infinite linear;
+}
+
+/* Animación para la super balota */
+@keyframes super-shine {
+    0% {
+        transform: rotate(45deg) translateX(-200%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(200%);
+    }
 }
 
 .box-label {
@@ -70,10 +139,7 @@ p {
     margin-bottom: 5px;
 }
 
-.super_balota .box {
-    background-color: red;
-    color: white;
-}
+
 
 .results {
     margin-top: 20px;
@@ -87,20 +153,21 @@ p {
 .button-container {
     margin-bottom: 20px;
     text-align: center;
+    
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
     color: white;
-    background-color: #28a745;
+    background-color: #054fcf;
     border: none;
-    border-radius: 5px !important;
+    border-radius: 20px !important;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #bebfbe;
 }
 
 button:active {
