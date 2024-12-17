@@ -150,13 +150,29 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.button-container {
-    margin-bottom: 20px;
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    
 }
 
-button {
+
+/* Estilos específicos para el botón navbar-toggler */
+.navbar-toggler {
+    padding: 5px;
+    background-color: transparent;
+    border: none; /* Elimina bordes predeterminados */
+    outline: none; /* Evita el borde grueso al enfocar */
+}
+
+.navbar-toggler:focus {
+    box-shadow: none; /* Quita el efecto de borde predeterminado */
+    border: none;
+}
+
+
+/* button {
     padding: 10px 20px;
     font-size: 16px;
     color: white;
@@ -174,40 +190,8 @@ button:active {
     background-color: #fff;
     color: #666;
     border: 0.5px solid #4caf50;
-}
+} */
 
 .hidden {
     display: none;
 }
-
-/* Otros estilos existentes */
-/* .title {
-    text-align: center;
-    color: #218838;
-    font-weight: bold;
-}
-
-ol {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-ol li {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #555;
-    padding-left: 10px;
-}
-
-ol li::marker {
-    color: #4caf50;
-    font-weight: bold;
-}
-
-
-
- */
