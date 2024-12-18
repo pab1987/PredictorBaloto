@@ -19,7 +19,7 @@ document.getElementById('combinationForm').addEventListener('submit', async func
     if (validNumbers && validSpecial) {
         try {
             // Enviar los datos al backend
-            const response = await fetch('https://predictorbaloto.onrender.com/add_combination', {  // Asegúrate de que Flask corre en el puerto 5000
+            const response = await fetch('/add_combination', {  
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ document.getElementById('combinationForm').addEventListener('submit', async func
                     document.getElementById('message').textContent = "Combinación agregada con éxito.";
                 setTimeout(() => {
                     document.getElementById('message').textContent = "";
-                }, 3000);
+                }, 5000);
                 document.getElementById('combinationForm').reset(); // Limpiar el formulario
             } else {
                 document.getElementById('message').textContent = "Error al agregar la combinación: " + result.error;
