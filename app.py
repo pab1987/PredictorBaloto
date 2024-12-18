@@ -2,6 +2,8 @@
 import pandas as pd
 from dotenv import load_dotenv
 import os
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import make_scorer, f1_score, precision_score
 from sklearn.ensemble import RandomForestClassifier
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -81,8 +83,29 @@ def get_data():
 
 def train_and_save_model():
     X, y = get_data()
-    model = RandomForestClassifier(n_estimators=100)
+    model = RandomForestClassifier(
+        n_estimators=200, # Más árboles para mayor precisión
+        max_depth=10,       # Limitar la profundidad para evitar sobreajuste
+        min_samples_split=5, # Mejor generalización
+        random_state=42     # Reproducibilidad
+        
+    )
+    
+    # Evaluar la precisión con validación cruzada
+    accuracy_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
+    print(f"Precisión promedio (cross-validation): {accuracy_scores.mean():.4f}")
+    
+    # Evaluar F1-Score con validación cruzada
+    f1_scores = cross_val_score(model, X, y, cv=5, scoring=make_scorer(f1_score, average='weighted'))
+    print(f"F1-Score promedio (cross-validation): {f1_scores.mean():.4f}")
+    
+    # Evaluar Precisión con validación cruzada
+    precision_scores = cross_val_score(model, X, y, cv=5, scoring=make_scorer(precision_score, average='weighted'))
+    print(f"Precisión promedio (cross-validation): {precision_scores.mean():.4f}")
+    
+    # Entrenamiento final
     model.fit(X, y)
+    
     joblib.dump(model, 'trained_model.pkl')
     print("Modelo entrenado y guardado como 'trained_model.pkl'.")
 
@@ -97,11 +120,27 @@ def add_combination():
     if not numbers or len(numbers) != 5 or not special:
         return jsonify({'success': False, 'error': 'Datos inválidos'})
 
-    try:
+    """ try:
         numbers = [int(num) for num in numbers]
         special = int(special)
     except ValueError:
-        return jsonify({'success': False, 'error': 'Error al convertir números'})
+        return jsonify({'success': False, 'error': 'Error al convertir números'}) """
+        
+    try:
+        numbers = [int(num) for num in numbers]
+        special = int(special)
+
+        if len(set(numbers)) != 5:  # Verificar que los números sean únicos
+            return jsonify({'success': False, 'error': 'Los números no deben repetirse.'})
+
+        if not all(1 <= num <= 43 for num in numbers):  # Rango válido
+            return jsonify({'success': False, 'error': 'Los números deben estar entre 1 y 43.'})
+
+        if not (1 <= special <= 16):  # Verifica el rango del número especial
+            return jsonify({'success': False, 'error': 'El número especial debe estar entre 1 y 16.'})
+
+    except ValueError:
+        return jsonify({'success': False, 'error': 'Error al convertir números.'})
 
     # Guardar en la base de datos
     combination = Combination(numbers=numbers, special=special)
