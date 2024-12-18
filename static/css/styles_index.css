@@ -27,6 +27,54 @@
   }
 
 
+
+  /* Estilo general del navbar-brand */
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Alinear logo y texto verticalmente */
+    text-decoration: none;
+    font-family: 'Bungee', sans-serif; /* Fuente moderna */
+    font-weight: bold;
+    font-size: 1.5rem; /* Tamaño del texto */
+}
+
+/* Logo */
+.logo {
+    width: 50px; /* Ajusta el tamaño del logo */
+    height: 50px;
+    margin-right: 10px; /* Espacio entre logo y texto */
+    transition: transform 0.3s ease; /* Efecto al pasar el cursor */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Zoom suave */
+}
+
+/* Texto del logo */
+.logo-text {
+    display: flex;
+    align-items: center; /* Alinear partes del texto */
+    gap: 5px; /* Espaciado entre partes del logo */
+}
+
+/* Estilo para "Balot" */
+.logo-part1 {
+    color: #054fcf; /* Azul vibrante */
+}
+
+/* Estilo para "IA" */
+.logo-part2 {
+    color: #f9566e; /* Rojo llamativo */
+}
+
+/* Hover en el conjunto del logo */
+.navbar-brand:hover .logo-part1, 
+.navbar-brand:hover .logo-part2 {
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6); /* Efecto brillante */
+}
+
+
+
 /************************************/
 
 p {
@@ -171,27 +219,79 @@ p {
     border: none;
 }
 
-
-/* button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #054fcf;
-    border: none;
-    border-radius: 20px !important;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #bebfbe;
-}
-
-button:active {
-    background-color: #fff;
-    color: #666;
-    border: 0.5px solid #4caf50;
-} */
-
 .hidden {
     display: none;
+}
+
+
+
+
+
+/* Ajustes para pantallas de menos de 768px */
+@media (max-width: 767px) {
+    /* Reducir la escala de los elementos */
+    body {
+        transform-origin: top;  /* Mantener la parte superior fija */
+    }
+
+    .navbar-brand img {
+        width: 50px;  /* Reducir el tamaño del logo en dispositivos pequeños */
+        height: 50px;
+    }
+
+    .navbar-toggler {
+        padding: 5px;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;  /* Reducir tamaño de texto de los enlaces de navegación */
+    }
+
+    .container {
+        gap: 10px;
+    }
+
+    .box {
+        width: 50px;  /* Reducir el tamaño de los cuadros */
+        height: 50px;
+        font-size: 18px;  /* Reducir el tamaño de la fuente dentro de los cuadros */
+    }
+
+    .btn {
+        font-size: 0.85rem;  /* Reducir tamaño del botón */
+        padding: 0.6rem 1rem;  /* Ajustar padding */
+    }
+
+    p {
+        font-size: 14px;  /* Reducir el tamaño del texto de la nota */
+        padding: 8px;
+    }
+
+    .box-label {
+        font-size: 14px;  /* Reducir tamaño de la etiqueta */
+    }
+}
+
+/* Ajustes para pantallas de menos de 576px (dispositivos extra pequeños) */
+@media (max-width: 575px) {
+    
+
+    .box {
+        width: 40px;  /* Reducir aún más el tamaño de los cuadros */
+        height: 40px;
+        font-size: 14px;  /* Ajuste del tamaño de la fuente */
+    }
+
+    .btn {
+        font-size: 0.75rem;  /* Reducir tamaño del botón */
+        padding: 0.5rem 0.9rem; /* Ajustar padding */
+    }
+
+    .navbar-brand {
+        font-size: 0.9rem;  /* Reducir tamaño del texto del logo */
+    }
+
+    p {
+        font-size: 12px;  /* Reducir tamaño del texto */
+    }
 }
