@@ -5,6 +5,7 @@ document.getElementById('fetchButton').addEventListener('click', function () {
     fetch('/predict')
         .then(response => response.json())
         .then(data => {
+            console.log("Entra a fetch ")
             // Comprobar si la respuesta es exitosa
             if (data.estado === "exitoso") {
                 // Obtener los números y la super balota

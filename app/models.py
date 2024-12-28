@@ -1,4 +1,6 @@
-from app import db
+# app/models.py
+
+from . import db
 
 class Combination(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -17,3 +19,12 @@ class PredictionHistory(db.Model):
     def __init__(self, numbers, special):
         self.numbers = ','.join(map(str, numbers))
         self.special = special
+
+    @staticmethod
+    def add_prediction(prediction):
+        history = PredictionHistory(
+            numbers=','.join(map(str, prediction['numbers'])),
+            special=prediction['special']
+        )
+        db.session.add(history)
+        db.session.commit()
