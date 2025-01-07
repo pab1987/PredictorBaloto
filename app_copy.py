@@ -316,8 +316,7 @@ def predict():
         "prediccion": {
             "balotas": prediction["numbers"],
             "super_balota": prediction["special"]
-        },
-        
+        },    
     }
 
     return jsonify(response)
