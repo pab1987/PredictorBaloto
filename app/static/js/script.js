@@ -19,7 +19,7 @@ document.getElementById('combinationForm').addEventListener('submit', async func
     if (validNumbers && validSpecial) {
         try {
             // Enviar los datos al backend
-            const response = await fetch('/add_combination', {  
+            const response = await fetch('/api/add_combination', {  
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -39,11 +39,11 @@ document.getElementById('combinationForm').addEventListener('submit', async func
 
             // Mostrar mensaje basado en la respuesta
             if (result.success) {
-                    document.getElementById('message').textContent = "Combinación agregada con éxito.";
+                    document.getElementById('message').textContent = result.message;
                 setTimeout(() => {
                     document.getElementById('message').textContent = "";
+                    document.getElementById('combinationForm').reset(); // Limpiar el formulario
                 }, 5000);
-                document.getElementById('combinationForm').reset(); // Limpiar el formulario
             } else {
                 document.getElementById('message').textContent = "Error al agregar la combinación: " + result.error;
             }
@@ -71,7 +71,7 @@ document.getElementById('csvForm').addEventListener('submit', async function(eve
     formData.append('csvFile', csvFile);
 
     // Enviar el archivo al backend
-    const response = await fetch('https://predictorbaloto.onrender.com/upload_csv', {
+    const response = await fetch('/api/upload_csv', {
         method: 'POST',
         body: formData
     });

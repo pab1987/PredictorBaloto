@@ -10,30 +10,29 @@
 │   ├── routes
 │   │   ├── __init__.py
 │   │   ├── __pycache__
-│   │   ├── admin_routes.py
 │   │   ├── api_routes.py
-│   │   ├── prediction_routes.py
-│   │   └── user_routes.py
+│   │   └── views_routes.py
 │   ├── static
 │   │   ├── css
 │   │   ├── images
 │   │   └── js
 │   ├── templates
 │   │   ├── admin.html
-│   │   └── index.html
+│   │   ├── base.html
+│   │   ├── index.html
+│   │   └── nosotros.html
 │   └── utils
 │       ├── __init__.py
 │       ├── __pycache__
 │       ├── db_utils.py
 │       ├── mote_carlo.py
 │       └── prediction_utils.py
-├── app.py
+├── app_copy.py
 ├── docker-compose.yml
 ├── estructura.txt
 ├── requirements.txt
 ├── run.py
 ├── runtime.txt
-├── trained_model.pkl
 └── venv
     ├── bin
     │   ├── Activate.ps1
@@ -59,4 +58,4 @@
     │   └── python3.13
     └── pyvenv.cfg
 
-18 directories, 42 files
+18 directories, 41 files

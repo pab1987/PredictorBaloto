@@ -119,12 +119,6 @@ def add_combination():
 
     if not numbers or len(numbers) != 5 or not special:
         return jsonify({'success': False, 'error': 'Datos inválidos'})
-
-    """ try:
-        numbers = [int(num) for num in numbers]
-        special = int(special)
-    except ValueError:
-        return jsonify({'success': False, 'error': 'Error al convertir números'}) """
         
     try:
         numbers = [int(num) for num in numbers]

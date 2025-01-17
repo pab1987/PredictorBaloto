@@ -1,11 +1,36 @@
+document.addEventListener("DOMContentLoaded", function () {
+    
+
+    // Selecciona los enlaces dentro de la barra de navegación con la clase `custom-nav-link`
+    const navLinks = document.querySelectorAll('.nav-bar-base .custom-nav-link');
+
+    const removeActiveClass = () => {
+        navLinks.forEach(link => link.classList.remove('active'));
+    };
+
+    const setActiveLink = () => {
+        const currentPath = window.location.pathname;
+
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (linkPath === currentPath || (currentPath === "/" && linkPath === "/")) {
+                removeActiveClass();  // Eliminar la clase 'active' de todos
+                link.classList.add('active');  // Agregar 'active' al enlace actual
+            }
+        });
+    };
+
+    setActiveLink();
+});
+
+
 document.getElementById('fetchButton').addEventListener('click', function () {
 
 
     // Realizar la petición GET a la ruta '/predict'
-    fetch('/predict')
+    fetch('/api/predict')
         .then(response => response.json())
         .then(data => {
-            console.log("Entra a fetch ")
             // Comprobar si la respuesta es exitosa
             if (data.estado === "exitoso") {
                 // Obtener los números y la super balota
@@ -32,19 +57,3 @@ document.getElementById('fetchButton').addEventListener('click', function () {
         });
 });
 
-
-// Obtener todos los elementos de la barra de navegación
-const navLinks = document.querySelectorAll('.nav-link');
-
-// Función para eliminar la clase 'active' de todos los elementos
-function removeActiveClass() {
-    navLinks.forEach(link => link.classList.remove('active'));
-}
-
-// Añadir evento de clic a cada enlace
-navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-        removeActiveClass();  // Eliminar 'active' de todos
-        this.classList.add('active');  // Agregar 'active' al enlace clickeado
-    });
-});

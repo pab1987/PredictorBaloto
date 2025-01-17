@@ -1,17 +1,21 @@
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import os
 from dotenv import load_dotenv
 import joblib
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+# Importar el blueprint de rutas
 
 # Cargar las variables de entorno
 load_dotenv()
 
-# Inicializar extensiones
-db = SQLAlchemy()
-
 def create_app():
+    
     app = Flask(__name__)
     
     # Cargar el modelo globalmente al iniciar la aplicación
@@ -22,7 +26,7 @@ def create_app():
     # Inicializar extensiones
     db.init_app(app)
     CORS(app, resources={r"/*": {"origins": "*"}})
-
+    
     # Registrar Blueprints
     from .routes import register_routes
     register_routes(app)
