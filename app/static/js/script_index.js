@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     // Selecciona los enlaces dentro de la barra de navegación con la clase `custom-nav-link`
-    const navLinks = document.querySelectorAll('.nav-bar-base .custom-nav-link');
+    const navLinks = document.querySelectorAll('.nav-link');
 
     const removeActiveClass = () => {
         navLinks.forEach(link => link.classList.remove('active'));
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setActiveLink();
 });
+
 
 
 document.getElementById('fetchButton').addEventListener('click', function () {

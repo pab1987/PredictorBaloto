@@ -5,71 +5,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 120px;
-    background: #11141a;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 25px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-nav a {
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
-}
-
-nav a:hover,
-nav a.active {
-    color: #0ef;
-}
-
-main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: #1f242d;
-}
 
 
 
-/* Estilos del botón hamburguesa */
-/* .navbar-toggler {
-    display: none; 
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-} */
-
-
-.navbar-toggler span {
-    display: block;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
 /********************** index *******************************/
 
 
@@ -78,12 +16,12 @@ p {
     font-size: 20px;
     color: white;
     padding: 10px;
-    border-radius: 4px;
+    width: 80%;
 }
 
 .container {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     justify-content: center;
     margin-bottom: 30px;
 }
@@ -200,28 +138,8 @@ p {
     text-align: center;
 }
 
-
-/* Estilos específicos para el botón navbar-toggler */
-.navbar-toggler {
-    padding: 5px;
-    background-color: transparent;
-    border: none; /* Elimina bordes predeterminados */
-    outline: none; /* Evita el borde grueso al enfocar */
-}
-
-.navbar-toggler:focus {
-    box-shadow: none; /* Quita el efecto de borde predeterminado */
-    border: none;
-}
-
 .hidden {
     display: none;
-}
-
-.container {
-    max-width: 800px;
-    padding: 20px;
-    background: #1f242d;
 }
 
 h1, h2 {
@@ -256,20 +174,6 @@ input[type="number"]:last-child, input[type="file"] {
     margin-right: 0;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
 footer {
     text-align: center;
     margin-top: 20px;
@@ -281,267 +185,3 @@ footer {
     margin-top: 15px;
     font-weight: bold;
 }
-
-
-/************** Nosotros ****************/
-
-/* Estilos específicos para la página de "Nosotros" */
-.nosotros-page {
-    color: #333;  /* Color de texto más suave */
-    padding: 92px 20px;
-}
-
-.bg-custom {
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Título de la sección "Sobre nosotros" */
-.nosotros-page .section-title {
-    font-size: 3rem;  /* Tamaño de fuente mayor */
-    font-weight: 600;
-    color: white;
-    text-align: center;
-    margin-bottom: 40px;
-    text-transform: uppercase;  /* Título con mayúsculas */
-    letter-spacing: 2px;
-}
-
-/* Sección de contenido */
-.content-section {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-/* Estilos de las tarjetas */
-.card-custom {
-    border-radius: 10px;  /* Bordes redondeados */
-    overflow: hidden;  /* Para que las imágenes no sobresalgan */
-    background-color: white;  /* Fondo blanco para las tarjetas */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 20px;
-}
-
-.card-custom:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilos de los miembros del equipo */
-.team-member img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-}
-
-.team-member h4 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.contact-text {
-    color: white;
-    font-size: 1.3rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Botón de contacto */
-.btn-custom {
-    background-color: #ffcc00;
-    border: none;
-    padding: 12px 24px;
-    color: white;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: block;
-    margin: 0 auto;
-}
-
-.btn-custom:hover {
-    background-color: #ff9900;
-    transform: scale(1.05);
-}
-
-/***************** fin nosotros ************************/
-
-
-/************** Contacto ****************/
-
-/* Estilos para la sección de "Contáctanos" */
-.contact-section {
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-/* Título de la sección "Contáctanos" */
-.contact-section .section-title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Botón de contacto */
-.contact-section .btn-custom {
-    background-color: #ffcc00;
-    border: none;
-    padding: 12px 24px;
-    color: white;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: inline-block;
-}
-
-.contact-section .btn-custom:hover {
-    background-color: #ff9900;
-    transform: scale(1.05);
-}
-
-/***************** fin contacto ************************/
-
-
-
-
-
-
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* .navbar-toggler {
-        display: flex;
-    }
-
-    .nav-bar-base {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 60px; 
-        right: 0;
-        background-color: #11141a;
-        width: 100%;
-        padding: 10px 0;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 100;
-    }
-
-    .nav-bar-base.active {
-        display: flex;
-    } */
-
-    .logo {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav a {
-        font-size: 16px;
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    .container {
-        /* flex-direction: column; */
-        gap: 20px;
-    }
-
-    .box {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-    }
-
-    .card-custom {
-        width: 100%;
-        max-width: 320px;
-    }
-}
-
-/* Estilos para pantallas extra pequeñas (teléfonos) */
-@media (max-width: 480px) {
-    header {
-        padding: 10px 15px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
-    nav a {
-        font-size: 14px;
-    }
-
-    .box {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-
-    .contact-section .section-title,
-    .nosotros-page .section-title {
-        font-size: 1.5rem;
-    }
-
-    .btn-custom {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    input[type="number"], input[type="file"] {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .input-group {
-        flex-direction: column;
-    }
-
-    button {
-        width: 100%;
-    }
-}
-
-/* Efecto del botón hamburguesa activo */
-/* .navbar-toggler.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.navbar-toggler.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.navbar-toggler.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
- */
