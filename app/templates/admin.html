@@ -1,50 +1,48 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predicción de Combinaciones Baloto</title>
-    <link rel="stylesheet" href="../../static/css/styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>Predicciones de Combinaciones Baloto</h1>
-        </div>
-    </header>
-    <div class="container">
-        <h2>Formulario de Combinaciones</h2>
-        <form id="combinationForm" class="form">
-            <label for="numbers">Balotas del 01 al 43:</label>
-            <div class="input-group">
-                <input type="number" id="num1" min="1" max="43" required>
-                <input type="number" id="num2" min="1" max="43" required>
-                <input type="number" id="num3" min="1" max="43" required>
-                <input type="number" id="num4" min="1" max="43" required>
-                <input type="number" id="num5" min="1" max="43" required>
-            </div>
+{% extends "base.html" %}
 
-            <label for="special">Super balota del 01 al 16:</label>
-            <input type="number" id="special" min="1" max="16" required>
+{% block title %}Admin{% endblock %}
+
+{% block head %}
+<!-- Agregar estilos específicos para el admin -->
+<link rel="stylesheet" href="../static/css/admin.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-admin">
+
+        <form id="combinationForm" class="form">
+            <label class="title-inputs" for="numbers">Balotas del 01 al 43 y Super balota del 01 al 16:</label>
+            <div class="input-group">
+                <input type="number" id="num1" min="1" max="43" required placeholder="B1">
+                <input type="number" id="num2" min="1" max="43" required placeholder="B2">
+                <input type="number" id="num3" min="1" max="43" required placeholder="B3">
+                <input type="number" id="num4" min="1" max="43" required placeholder="B4">
+                <input type="number" id="num5" min="1" max="43" required placeholder="B5">
+                <input type="number" id="special" min="1" max="16" required placeholder="SB">
+            </div>
 
             <button type="submit">Agregar Combinación</button>
         </form>
         <div id="message"></div>
 
         <form id="csvForm" class="form" enctype="multipart/form-data">
-            <label for="csvFile">Subir archivo CSV:</label>
-            <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
-            <button type="submit">Cargar CSV</button>
+            <div class="file-upload">
+                <label for="csvFile" class="custom-file-label">Subir archivo CSV</label>
+                <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
+                <span id="fileName" class="file-name">No se ha seleccionado archivo</span>
+            </div>
+            <button type="submit" class="btn-submit">Enviar archivo</button>
         </form>
         
         <p id="csvMessage"></p>
     </div>
     
-    <footer>
-        <p>&copy; 2024 Predicciones de Combinaciones. Todos los derechos reservados por Pablo Lara.</p>
-    </footer>
-    
-    <script src="../static/js/script.js"></script>
-</body>
-</html>
+{% endblock %}
+
+  <!-- Bloque para scripts -->
+  {% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../static/js/script.js"></script>
+  {% endblock %}

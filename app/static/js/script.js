@@ -56,6 +56,13 @@ document.getElementById('combinationForm').addEventListener('submit', async func
     }
 });
 
+// Evento para mostrar el nombre del archivo CSV seleccionado
+document.getElementById('csvFile').addEventListener('change', function () {
+    const fileNameElement = document.getElementById('fileName');
+    const fileName = this.files[0] ? this.files[0].name : 'No se ha seleccionado archivo';
+    fileNameElement.textContent = fileName;
+});
+
 // Código para manejar la carga de CSV (si es necesario)
 document.getElementById('csvForm').addEventListener('submit', async function(event) {
     event.preventDefault();
