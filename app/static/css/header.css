@@ -1,0 +1,61 @@
+/* .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 120px;
+    background: #11141a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+} */
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a {
+    font-size: 18px;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #0ef !important;
+}
+
+
+.navbar {
+    background-color: #11141a !important;
+}
+
+.nav-link{
+    color: #fff !important;
+    font-size: 20px;
+}
+
+.navbar-brand:active,
+.navbar-brand:hover {
+    color: #fff !important
+}
+
+.list_icon {
+    color: #fff;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none; /* Quita el efecto de borde predeterminado */
+    border: none;
+}
+
+
+
+

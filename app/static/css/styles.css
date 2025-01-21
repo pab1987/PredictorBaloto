@@ -5,71 +5,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 120px;
-    background: #11141a;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 25px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-nav a {
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
-}
-
-nav a:hover,
-nav a.active {
-    color: #0ef;
-}
-
-main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: #1f242d;
-}
 
 
 
-/* Estilos del botón hamburguesa */
-/* .navbar-toggler {
-    display: none; 
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-} */
-
-
-.navbar-toggler span {
-    display: block;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
 /********************** index *******************************/
 
 
@@ -78,12 +16,12 @@ p {
     font-size: 20px;
     color: white;
     padding: 10px;
-    border-radius: 4px;
+    width: 80%;
 }
 
 .container-balotas {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     justify-content: center;
     margin-bottom: 30px;
 }
@@ -200,28 +138,8 @@ p {
     text-align: center;
 }
 
-
-/* Estilos específicos para el botón navbar-toggler */
-.navbar-toggler {
-    padding: 5px;
-    background-color: transparent;
-    border: none; /* Elimina bordes predeterminados */
-    outline: none; /* Evita el borde grueso al enfocar */
-}
-
-.navbar-toggler:focus {
-    box-shadow: none; /* Quita el efecto de borde predeterminado */
-    border: none;
-}
-
 .hidden {
     display: none;
-}
-
-.container {
-    max-width: 800px;
-    padding: 20px;
-    background: #1f242d;
 }
 
 h1, h2 {
@@ -234,20 +152,6 @@ h1, h2 {
 
 
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
 footer {
     text-align: center;
     margin-top: 20px;
@@ -259,7 +163,6 @@ footer {
     margin-top: 15px;
     font-weight: bold;
 }
-
 @media only screen and (max-width: 768px) {
     .box {
         width: 50px;
